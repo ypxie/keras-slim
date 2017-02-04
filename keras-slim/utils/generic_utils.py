@@ -1,3 +1,4 @@
+#directly taken from keras https://github.com/fchollet/keras
 from __future__ import absolute_import
 import numpy as np
 import time

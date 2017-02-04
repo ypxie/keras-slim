@@ -1,6 +1,8 @@
 *.DS_Store
 *.pyc
 *py~
+keras-slim/models.py
+keras-slim/metrics.py
 *.swp
 *~
 temp/*
