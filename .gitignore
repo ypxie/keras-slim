@@ -1,0 +1,22 @@
+*.DS_Store
+*.pyc
+*py~
+.vscode/*
+keras-slim/models.py
+keras-slim/metrics.py
+*.swp
+*~
+temp/*
+dist/*
+build/*
+docs/site/*
+docs/theme/*
+tags
+Keras.egg-info
+
+# test-related
+.coverage
+.cache
+
+# developer environments
+.idea
