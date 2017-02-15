@@ -1,8 +1,5 @@
-'''Fairly basic set of tools for real-time data augmentation on image data.
-Can easily be extended to include new transformations,
-new preprocessing methods, etc...
-
-# mainly copied from keras, with elstic-transformation added.
+'''
+added elastic tansformation and structured label transformation.
 '''
 from __future__ import absolute_import
 from __future__ import print_function
@@ -16,14 +13,14 @@ import os
 import threading
 import warnings
 
-from keras import backend as K
+import ..backend.export as K
 import numpy as np
 from numpy.random import random_integers
 from scipy.signal import convolve2d
 from scipy.ndimage.interpolation import map_coordinates
 from scipy.ndimage.filters import gaussian_filter
 import sys
-from proj_utils.local_utils import imshow, imread
+
 
 from numba import jit 
 

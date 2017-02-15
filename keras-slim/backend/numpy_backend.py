@@ -30,9 +30,6 @@ class npwrapper(np.ndarray):
         return obj 
 
     def __array_finalize__(self, obj):
-        #print('In __array_finalize__:')
-        #print('   self is %s' % repr(self))
-        #print('   obj is %s' % repr(obj))
         if obj is None: return
         self.trainable = getattr(obj, 'trainable', None)
         self.set_value = getattr(obj, 'set_value', self.set_value)
@@ -40,10 +37,6 @@ class npwrapper(np.ndarray):
         #self.linalg = getattr(obj, 'linalg', np.linalg)
         
     def __array_wrap__(self, out_arr, context=None):
-        #print('In __array_wrap__:')
-        #print('   self is %s' % repr(self))
-        #print('   arr is %s' % repr(out_arr))
-        # then just call the parent
         return np.ndarray.__array_wrap__(self, out_arr, context)
     def set_value(self, value=None):
         if self.ndim == 0:
@@ -223,8 +216,7 @@ def set_subtensor(dest, source):
     # you can not use return value, since dest can be a indexed tensor which 
     # might not have a desired shape
     dest = source
-    raise warnings('please be careful, dest in set_subtensor is the sliced \
-                   version of dest, use assign_subtensor instead')
+    raise warnings('dest in set_subtensor is the sliced version of dest, use assign_subtensor instead')
     return dest
 
 def assign_subtensor(dest, source, dest_slice=None):
